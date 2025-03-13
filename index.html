@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionnaire sur la qualité des soins</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="number"], textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="radio"], input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .confirmation-message {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Questionnaire sur la qualité des soins</h1>
+    <form id="questionnaireForm" action="#" method="post">
+        <h2>Informations générales</h2>
+        <label>1. Sexe :</label>
+        <label><input type="radio" name="sexe" value="homme"> Homme</label>
+        <label><input type="radio" name="sexe" value="femme"> Femme</label>
+
+        <label>2. Âge :</label>
+        <input type="text" name="age" placeholder="Entrez votre âge">
+
+        <label>3. Années d'expérience en soins infirmiers :</label>
+        <label><input type="radio" name="experience" value="<1"> < 1 an</label>
+        <label><input type="radio" name="experience" value="1-5"> 1-5 ans</label>
+        <label><input type="radio" name="experience" value="6-10"> 6-10 ans</label>
+        <label><input type="radio" name="experience" value=">10"> > 10 ans</label>
+
+        <label>4. Type d'unité pédiatrique :</label>
+        <label><input type="radio" name="unite" value="neonatalogie"> Néonatalogie</label>
+        <label><input type="radio" name="unite" value="pediatrie_generale"> Pédiatrie générale</label>
+        <label><input type="radio" name="unite" value="soins_intensifs"> Soins intensifs pédiatriques</label>
+        <label><input type="radio" name="unite" value="autre"> Autre (préciser) : <input type="text" name="unite_autre"></label>
+
+        <label>5. Niveau de formation :</label>
+        <label><input type="radio" name="formation" value="diplome_etat"> Diplôme d'État</label>
+        <label><input type="radio" name="formation" value="licence"> Licence</label>
+        <label><input type="radio" name="formation" value="master"> Master</label>
+        <label><input type="radio" name="formation" value="autre"> Autre : <input type="text" name="formation_autre"></label>
+
+        <h2>I. Connaissance et application des protocoles de qualité des soins</h2>
+        <label>6. Êtes-vous informé(e) des protocoles et recommandations en matière de qualité des soins en pédiatrie ?</label>
+        <label><input type="radio" name="protocoles" value="oui_parfaitement"> Oui, parfaitement</label>
+        <label><input type="radio" name="protocoles" value="oui_partiellement"> Oui, mais partiellement</label>
+        <label><input type="radio" name="protocoles" value="non"> Non</label>
+
+        <label>7. À quelle fréquence appliquez-vous les protocoles de qualité des soins dans votre pratique quotidienne ?</label>
+        <label><input type="radio" name="frequence" value="toujours"> Toujours</label>
+        <label><input type="radio" name="frequence" value="souvent"> Souvent</label>
+        <label><input type="radio" name="frequence" value="parfois"> Parfois</label>
+        <label><input type="radio" name="frequence" value="rarement"> Rarement</label>
+
+        <label>8. Quels sont les protocoles de soins les plus couramment utilisés dans votre unité ? (Plusieurs réponses possibles)</label>
+        <label><input type="checkbox" name="protocoles_utilises" value="prevention_infections"> Prévention des infections nosocomiales</label>
+        <label><input type="checkbox" name="protocoles_utilises" value="gestion_douleur"> Surveillance et gestion de la douleur de l'enfant</label>
+        <label><input type="checkbox" name="protocoles_utilises" value="securisation_medicaments"> Sécurisation de l'administration des médicaments</label>
+        <label><input type="checkbox" name="protocoles_utilises" value="prevention_troubles_nutritionnels"> Prévention des troubles nutritionnels et de la déshydratation</label>
+        <label><input type="checkbox" name="protocoles_utilises" value="soins_relationnels"> Soins relationnels et accompagnement des parents</label>
+        <label><input type="checkbox" name="protocoles_utilises" value="autre"> Autre (préciser) : <input type="text" name="protocoles_autre"></label>
+
+        <h2>II. Gestion des risques et prévention des complications</h2>
+        <label>9. Participez-vous activement à l'identification et à la gestion des risques en pédiatrie ?</label>
+        <label><input type="radio" name="gestion_risques" value="oui_regulierement"> Oui, régulièrement</label>
+        <label><input type="radio" name="gestion_risques" value="parfois"> Parfois</label>
+        <label><input type="radio" name="gestion_risques" value="non"> Non</label>
+
+        <label>10. Rencontrez-vous des difficultés dans la mise en œuvre des mesures de prévention des infections et des complications en pédiatrie ?</label>
+        <label><input type="radio" name="difficultes_prevention" value="oui_souvent"> Oui, souvent</label>
+        <label><input type="radio" name="difficultes_prevention" value="parfois"> Parfois</label>
+        <label><input type="radio" name="difficultes_prevention" value="non"> Non</label>
+
+        <label>11. Quels sont les principaux obstacles à la gestion efficace des risques dans votre unité ? (Plusieurs réponses possibles)</label>
+        <label><input type="checkbox" name="obstacles" value="manque_personnel"> Manque de personnel</label>
+        <label><input type="checkbox" name="obstacles" value="charge_travail"> Charge de travail élevée</label>
+        <label><input type="checkbox" name="obstacles" value="manque_formation"> Manque de formation continue</label>
+        <label><input type="checkbox" name="obstacles" value="manque_materiel"> Manque de matériel adapté aux enfants</label>
+        <label><input type="checkbox" name="obstacles" value="difficulte_collaboration_parents"> Difficulté de collaboration avec les parents</label>
+        <label><input type="checkbox" name="obstacles" value="autre"> Autre (préciser) : <input type="text" name="obstacles_autre"></label>
+
+        <h2>III. Communication et accompagnement des familles</h2>
+        <label>12. Comment évaluez-vous la communication entre les infirmiers et les autres professionnels de santé dans votre unité pédiatrique ?</label>
+        <label><input type="radio" name="communication" value="tres_bonne"> Très bonne</label>
+        <label><input type="radio" name="communication" value="bonne"> Bonne</label>
+        <label><input type="radio" name="communication" value="moyenne"> Moyenne</label>
+        <label><input type="radio" name="communication" value="mauvaise"> Mauvaise</label>
+
+        <label>13. À quelle fréquence impliquez-vous les parents dans la prise en charge de leur enfant hospitalisé ?</label>
+        <label><input type="radio" name="implication_parents" value="toujours"> Toujours</label>
+        <label><input type="radio" name="implication_parents" value="souvent"> Souvent</label>
+        <label><input type="radio" name="implication_parents" value="parfois"> Parfois</label>
+        <label><input type="radio" name="implication_parents" value="rarement"> Rarement</label>
+
+        <label>14. Quels sont les principaux défis liés à l'accompagnement des familles en pédiatrie ?</label>
+        <label><input type="checkbox" name="defis_familles" value="manque_temps"> Manque de temps pour l'éducation et le soutien des parents</label>
+        <label><input type="checkbox" name="defis_familles" value="difficulte_emotions"> Difficulté à gérer les émotions des parents</label>
+        <label><input type="checkbox" name="defis_familles" value="problemes_communication"> Problèmes de communication avec certaines familles</label>
+        <label><input type="checkbox" name="defis_familles" value="autre"> Autre (préciser) : <input type="text" name="defis_familles_autre"></label>
+
+        <h2>IV. Formation et amélioration continue</h2>
+        <label>15. Avez-vous bénéficié d'une formation continue sur la qualité des soins en pédiatrie au cours des 12 derniers mois ?</label>
+        <label><input type="radio" name="formation_continue" value="oui"> Oui</label>
+        <label><input type="radio" name="formation_continue" value="non"> Non</label>
+
+        <label>16. Pensez-vous que la formation continue permet d'améliorer la qualité des soins en pédiatrie ?</label>
+        <label><input type="radio" name="impact_formation" value="oui_fortement"> Oui, fortement</label>
+        <label><input type="radio" name="impact_formation" value="oui_partiellement"> Oui, partiellement</label>
+        <label><input type="radio" name="impact_formation" value="non"> Non</label>
+
+        <label>17. Quels sujets de formation seraient les plus pertinents pour améliorer la qualité des soins en pédiatrie ?</label>
+        <label><input type="checkbox" name="sujets_formation" value="gestion_douleur"> Gestion de la douleur chez l'enfant</label>
+        <label><input type="checkbox" name="sujets_formation" value="prevention_infections"> Prévention et prise en charge des infections en pédiatrie</label>
+        <label><input type="checkbox" name="sujets_formation" value="communication_parents"> Communication et soutien aux parents</label>
+        <label><input type="checkbox" name="sujets_formation" value="securisation_soins"> Sécurisation des soins et administration des médicaments</label>
+        <label><input type="checkbox" name="sujets_formation" value="autre"> Autre (préciser) : <input type="text" name="sujets_formation_autre"></label>
+
+        <h2>V. Suggestions et améliorations</h2>
+        <label>18. Selon vous, quelles actions pourraient être mises en place pour améliorer la gestion de la qualité des soins dans votre unité pédiatrique ?</label>
+        <textarea name="suggestions" rows="4" placeholder="Vos suggestions..."></textarea>
+
+        <label>19. Souhaitez-vous ajouter un commentaire ou une suggestion sur votre expérience en tant qu'infirmier(ère) dans la gestion de la qualité des soins en pédiatrie ?</label>
+        <textarea name="commentaires" rows="4" placeholder="Vos commentaires..."></textarea>
+
+        <button type="submit">Soumettre</button>
+    </form>
+    <div id="confirmationMessage" class="confirmation-message">
+        Merci pour votre soumission ! Votre réponse a été enregistrée avec succès.
+    </div>
+    <script>
+        document.getElementById('questionnaireForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Récupérer les données du formulaire
+            const formData = new FormData(this);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+
+            // Envoyer les données à Google Apps Script
+            fetch('https://script.google.com/macros/s/AKfycby5IYNiSXaKn2tkeT19HO8VjQ07G_CMm3rddO4LERrEn2DgG6CuN6am8EkdVlLqfA5UNw/exec', {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            })
+            .then(response => response.text())
+            .then(message => {
+                // Afficher le message de confirmation
+                document.getElementById('confirmationMessage').style.display = 'block';
+                document.getElementById('questionnaireForm').reset(); // Réinitialiser le formulaire
+            })
+            .catch(error => {
+                console.error('Erreur :', error);
+                alert('Une erreur s\'est produite. Veuillez réessayer.');
+            });
+        });
+    </script>
+</body>
+</html>
